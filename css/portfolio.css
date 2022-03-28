@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF0E5;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1300px;
+    align-content: center;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: 40px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+}
+
+.logo:hover {
+    color: #5533FF;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #5533FF;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: black;
+}
+
+.content {
+    margin-top: 100px;
+    display: flex;
+}
+
+.headshot {
+    width: 400px;
+    height: 525px;
+    border-radius: 15%;
+}
+
+.words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    margin-left: 50px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    margin-left: 50px;
+}
+
+@media(max-width: 768px) {
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-item {
+        margin: 16px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+}
