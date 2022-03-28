@@ -97,6 +97,24 @@ a:hover {
     margin-left: 50px;
 }
 
+.linkedin-logo {
+    width: 40px;
+    height: 40px;
+    outline: 2px solid white;
+}
+
+.github-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    outline: 2px solid white;
+}
+
+.contact-bar {
+    display: flex;
+
+}
+
 @media(max-width: 768px) {
 
     .hamburger {
