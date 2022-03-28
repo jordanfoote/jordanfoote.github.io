@@ -7,6 +7,14 @@
 body {
     background-color: #FFF0E5;
     font-family: 'Roboto', sans-serif;
+    padding: 0 64px;
+    transition: 0.5s;
+}
+
+body.active {
+    background-color: rgb(25, 39, 52);
+    color: white;
+    transition: 0.5s;
 }
 
 .container {
@@ -15,46 +23,122 @@ body {
     align-content: center;
 }
 
+.break {
+    margin: 50px 0;
+}
+
 li {
     list-style: none;
+}
+
+#toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background: #FFF0E5;
+    cursor: pointer;
+    box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
+                inset 0 8px 8px rgba(0,0,0,0.1),
+                inset 0 -4px 4px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    display: block;
+    margin-left: auto;
+}
+
+#toggle .indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to bottom, #FFF0E5, #DCDCDC);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255,255,255,0.2),
+                inset 0 -4px 4px rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+
+#toggle.active .indicator {
+    left: 25px;
+    background: linear-gradient(to bottom, #D3F8D3, #7BEA7B);
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255,255,255,0.2),
+                inset 0 -4px 4px rgba(255,255,255,0.2);
+    transition: 0.5s;
 }
 
 .navbar {
     min-height: 70px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
+    position: fixed;
+    overflow: hidden;
+    background-color: #FFF0E5;
+    top: 0;
+    transition: 0.5s;
+    max-width: 1300px;
+    width: 100%;
+}
+
+.navbar.active {
+    background-color: rgb(25, 39, 52);
+    transition: 0.5s;
+}
+
+.logo.active {
+    color: white;
+    transition: 0.5s;
+}
+
+a.active {
+    color: white;
+    transition: 0.5s;
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 40px;
-    margin-left: 40px;
+    margin-left: 20px;
+}
+
+.nav-link-3 {
+    margin-right: auto;
 }
 
 .logo {
     text-decoration: none;
     font-size: 2rem;
     color: black;
+    transition: 0s;
+    padding: 0;
 }
 
 .logo:hover {
     color: #5533FF;
+    transition: 0s;
 }
 
 a {
     text-decoration: none;
     color: black;
+    display: inline-block;
+    padding: 1em;
+    transition: 0s;
 }
 
 a:hover {
     color: #5533FF;
+    transition: 0s;
 }
 
 .hamburger {
     display: none;
+    padding-right: 10px;
 }
 
 .bar {
@@ -66,14 +150,14 @@ a:hover {
 }
 
 .content {
-    margin-top: 100px;
     display: flex;
+    margin-top: 120px;
 }
 
 .headshot {
-    width: 400px;
-    height: 525px;
-    border-radius: 15%;
+    width: 350px;
+    height: 450px;
+    border-radius: 5px;
 }
 
 .words {
@@ -100,22 +184,169 @@ a:hover {
 .linkedin-logo {
     width: 40px;
     height: 40px;
+    border-radius: 5px;
     outline: 2px solid white;
 }
 
 .github-logo {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     border-radius: 5px;
     outline: 2px solid white;
 }
 
 .contact-bar {
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+}
 
+.divider {
+    width: 50px;
+    transform: rotate(90deg);
+}
+
+.img-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sub-header {
+    font-size: 3em;
+}
+
+.paragraph {
+    font-size: 1.5em;
+}
+
+.logo-section {
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-section-logo {
+    width: 100px;
+    height: 110px;
+}
+
+#html-logo {
+    width: 100px;
+    height: 140px;
+}
+
+#html-logo:hover {
+    width: 120px;
+    height: 160px;
+    transition: 0.3s;
+}
+
+#css-logo {
+    width: 100px;
+    height: 140px;
+}
+
+#css-logo:hover {
+    width: 120px;
+    height: 160px;
+    transition: 0.3s;
+}
+
+#bootstrap-logo:hover {
+    width: 120px;
+    height: 130px;
+    transition: 0.3s;
+}
+
+#js-logo {
+    width: 110px;
+    height: 110px;
+}
+
+#js-logo:hover {
+    width: 130px;
+    height: 130px;
+    transition: 0.3s;
+}
+
+#jquery-Logo:hover {
+    width: 120px;
+    height: 135px;
+    transition: 0.3s;
+}
+
+#github-logo {
+    width: 110px;
+    height: 110px;
+}
+
+#github-logo:hover {
+    width: 130px;
+    height: 130px;
+    transition: 0.3s;
+}
+
+#mysql-logo {
+    width: 115px;
+    height: 115px;
+}
+
+#mysql-logo:hover {
+    width: 135px;
+    height: 135px;
+    transition: 0.3s;
+}
+
+#java-logo {
+    width: 110px;
+    height: 110px;
+}
+
+#java-logo:hover {
+    width: 130px;
+    height: 130px;
+    transition: 0.3s;
+}
+
+#spring-logo {
+    width: 110px;
+    height: 110px;
+}
+
+#spring-logo:hover {
+    width: 130px;
+    height: 130px;
+    transition: 0.3s;
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-name p {
+    display: none;
+}
+
+.logo-name:hover p{
+    display: flex;
 }
 
 @media(max-width: 768px) {
+
+    body {
+        padding: 0;
+    }
+
+    .logo {
+        padding-left: 10px;
+    }
 
     .hamburger {
         display: block;
@@ -137,6 +368,7 @@ a:hover {
     .navbar {
         display: flex;
         justify-content: space-between;
+        width: 100%;
     }
 
     .nav-menu {
@@ -145,18 +377,74 @@ a:hover {
         top: 70px;
         gap: 0;
         flex-direction: column;
-        background-color: white;
+        background-color: #FFF0E5;
         width: 100%;
         text-align: center;
         margin: 0;
     }
 
+    .nav-menu.active {
+        background-color: rgb(25, 39, 52);
+    }
+
     .nav-item {
-        margin: 16px;
+        margin: 0px;
     }
 
     .nav-menu.active {
         left: 0;
     }
 
+    .bar.active {
+        background-color: white;
+    }
+
+    .headshot {
+        display: none;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .words {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .name {
+        font-size: 2.5em;
+        margin: 0;
+    }
+
+    .title {
+        font-size: 1.5em;
+        margin: 0;
+    }
+
+    .contact-bar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .img-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .break {
+        margin: 10px;
+    }
+
+    #toggle {
+        margin-bottom: 20px;
+    }
 }
