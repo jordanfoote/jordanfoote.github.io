@@ -169,7 +169,7 @@ a:hover {
 .name {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 5rem;
     margin-left: 50px;
 }
@@ -179,6 +179,21 @@ a:hover {
     align-items: center;
     font-size: 3rem;
     margin-left: 50px;
+}
+
+.military-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.military-training {
+    font-size: 1.5em;
+    width: 650px;
+}
+
+.military-experience {
+    font-size: 1.5em;
+    width: 650px;
 }
 
 .linkedin-logo {
@@ -198,9 +213,10 @@ a:hover {
 .contact-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 100px;
+    font-size: 1.5em;
 }
 
 .divider {
