@@ -39,8 +39,8 @@ li {
     background: #FFF0E5;
     cursor: pointer;
     box-shadow: inset 0 8px 60px rgba(0,0,0,0.1),
-                inset 0 8px 8px rgba(0,0,0,0.1),
-                inset 0 -4px 4px rgba(0,0,0,0.1);
+    inset 0 8px 8px rgba(0,0,0,0.1),
+    inset 0 -4px 4px rgba(0,0,0,0.1);
     transition: 0.5s;
     display: block;
     margin-left: auto;
@@ -56,8 +56,8 @@ li {
     border-radius: 50%;
     transform: scale(0.9);
     box-shadow: 0 8px 40px rgba(0,0,0,0.5),
-                inset 0 4px 4px rgba(255,255,255,0.2),
-                inset 0 -4px 4px rgba(255,255,255,0.2);
+    inset 0 4px 4px rgba(255,255,255,0.2),
+    inset 0 -4px 4px rgba(255,255,255,0.2);
     transition: 0.5s;
 }
 
@@ -66,8 +66,8 @@ li {
     background: linear-gradient(to bottom, #D3F8D3, #7BEA7B);
     transform: scale(0.9);
     box-shadow: 0 8px 40px rgba(0,0,0,0.5),
-                inset 0 4px 4px rgba(255,255,255,0.2),
-                inset 0 -4px 4px rgba(255,255,255,0.2);
+    inset 0 4px 4px rgba(255,255,255,0.2),
+    inset 0 -4px 4px rgba(255,255,255,0.2);
     transition: 0.5s;
 }
 
@@ -244,6 +244,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .sub-section-logo {
@@ -344,6 +345,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 50px;
 }
 
 .logo-name p {
