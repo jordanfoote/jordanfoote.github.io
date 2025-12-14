@@ -6,6 +6,58 @@
     font-family: Arial, sans-serif;
 }
 
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+
+.logo-item {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    filter: grayscale(70%) brightness(0.9);
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%) brightness(1.1);
+    transform: scale(1.1);
+}
+
+.logo-item:hover::after {
+    box-shadow: 0 0 25px rgba(111, 0, 255, 0.9);
+}
+
+.logo-name {
+    position: absolute;
+    bottom: -2rem;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    color: #bebebe;
+    white-space: nowrap;
+}
+
+.logo-item:hover .logo-name {
+    opacity: 1;
+}
+
+
 h1,
 h2 {
     margin-bottom: 20px;
@@ -37,19 +89,109 @@ h2 {
 .experience-card h3 {
     margin-bottom: 8px;
     font-size: 18px;
+    color: #73c7ff;
 }
 
 .location-dates {
     font-size: 14px;
-    color: #aaa;
+    color: #bebebe;
     margin-bottom: 12px;
 }
 
 .experience-card ul {
-    list-style-type: disc;
+    list-style: none;
     padding-left: 20px;
 }
 
 .experience-card li {
     margin-bottom: 6px;
+    color: #bebebe;
+    background: none;
+}
+
+/* Modal overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+    background: #1e1e2f;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 800px;
+    color: #fff;
+    box-shadow: 0 0 20px #6f00ff;
+    animation: fadeIn 0.3s ease;
+    overflow-y: auto;
+    max-height: 90vh;
+    /* scroll if content is very long */
+}
+
+.location-dates ul {
+    list-style: none;
+}
+
+.close-btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #6f00ff;
+    border: none;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background: #73c7ff;
+    transition: background 0.3s ease;
+}
+
+.experience-card ul,
+.modal-content ul {
+    list-style: none; /* remove default bullets */
+    padding-left: 0;
+}
+
+.experience-card ul li,
+.modal-content ul li {
+    position: relative;
+    padding-left: 1.5rem; /* space for the arrow */
+    margin-bottom: 0.5rem;
+}
+
+.experience-card ul li::before,
+.modal-content ul li::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    color: #6f00ff; /* color of the arrow */
+}
+
+/* Optional: animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.more-text {
+    font-size: 0.9rem;
+    color: #aaa;
 }
